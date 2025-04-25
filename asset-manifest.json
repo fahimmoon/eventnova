@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/eventnova/static/css/main.7df41635.css",
+    "main.js": "/eventnova/static/js/main.0b2fcc36.js",
+    "static/js/453.6622c466.chunk.js": "/eventnova/static/js/453.6622c466.chunk.js",
+    "index.html": "/eventnova/index.html",
+    "main.7df41635.css.map": "/eventnova/static/css/main.7df41635.css.map",
+    "main.0b2fcc36.js.map": "/eventnova/static/js/main.0b2fcc36.js.map",
+    "453.6622c466.chunk.js.map": "/eventnova/static/js/453.6622c466.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7df41635.css",
+    "static/js/main.0b2fcc36.js"
+  ]
+}
