@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import 'aos/dist/aos.css';  // Import AOS CSS first
+import './styles/globals.css';  // Import globals.css next
+import './index.css';  // Import index.css last
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #000000;
+  --secondary: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@layer base {
+  html {
+    @apply text-base scroll-smooth;
+  }
+
+  body {
+    @apply bg-dark text-light font-sans antialiased;
+  }
+  
+  h1, h2, h3 {
+    @apply font-heading font-extrabold tracking-widest;
+  }
+
+  /* Mobile-first base sizing */
+  h1 { @apply text-2xl md:text-4xl lg:text-5xl; }
+  h2 { @apply text-xl md:text-3xl lg:text-4xl; }
+  h3 { @apply text-lg md:text-2xl lg:text-3xl; }
+
+  /* Custom scrollbar for mobile */
+  ::-webkit-scrollbar {
+    @apply w-1;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-dark;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-primary text-white rounded-full px-6 py-3 
+           font-semibold transition-all duration-300
+           hover:scale-105 hover:shadow-glow;
+  }
+
+  .card {
+    @apply bg-card border border-border rounded-2xl p-6 
+           shadow-lg hover:shadow-neon transition-all duration-300;
+  }
+
+  .input {
+    @apply bg-transparent border border-muted text-white 
+           px-4 py-2 rounded-md focus:ring-2 focus:ring-primary;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-primary;
+  }
+
+  .nav-link-active {
+    @apply text-primary relative;
+  }
+
+  .nav-link-active::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-secondary transform scale-x-100 transition-transform duration-300;
+  }
+
+  .container-padded {
+    @apply px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl;
+  }
+
+  .mobile-section-padding {
+    @apply py-12 md:py-20;
+  }
+
+  .mobile-grid {
+    @apply grid gap-4 sm:gap-6 lg:gap-8;
+  }
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background: 
+      linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+  }
+
+  /* Event Slider Styles */
+  .cursor-grab {
+    cursor: grab;
+  }
+
+  .cursor-grabbing {
+    cursor: grabbing;
+  }
+
+  /* Hide scrollbar but allow scrolling */
+  .overflow-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  .overflow-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .snap-x {
+    scroll-snap-type: x mandatory;
+  }
+
+  .snap-center {
+    scroll-snap-align: center;
+  }
+
+  /* Glow Animation */
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(92, 39, 254, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255, 0, 195, 0.5);
+    }
+  }
+
+  .glow-animation {
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  /* Gallery Styles */
+  .masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    grid-auto-flow: dense;
+  }
+
+  @keyframes tilt-shine {
+    0% {
+      background-position: 200% center;
+    }
+    100% {
+      background-position: -200% center;
+    }
+  }
+
+  .tilt-shine {
+    background: linear-gradient(
+      110deg,
+      transparent 33%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 67%
+    );
+    background-size: 200% 100%;
+    animation: tilt-shine 3s linear infinite;
+  }
+
+  /* Testimonial Styles */
+  .testimonial-shadow {
+    box-shadow: 0 0 30px rgba(92, 39, 254, 0.1);
+  }
+
+  .lightbox-overlay {
+    backdrop-filter: blur(8px);
+  }
+
+  /* Neon Input Effects */
+  .neon-input {
+    box-shadow: 0 0 10px rgba(92, 39, 254, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .neon-input:focus {
+    box-shadow: 0 0 20px rgba(92, 39, 254, 0.4);
+  }
+
+  /* Ripple Effect */
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+}
